@@ -1,22 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function About() {
 
   const stats = [
-    { number: "10+", label: "Projects" },
-    { number: "8+", label: "Technologies" },
-    { number: "1+", label: "Years Learning" }
+    { value: "10+", label: "Projects" },
+    { value: "8+", label: "Technologies" },
+    { value: "1+", label: "Years Learning" },
   ]
 
-  const tech = [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind",
-    "Node.js",
-    "PostgreSQL"
+  const services = [
+    {
+      title: "Frontend Development",
+      desc: "Building modern web apps using React and Next.js."
+    },
+    {
+      title: "UI / UX Design",
+      desc: "Creating clean and intuitive user interfaces."
+    },
+    {
+      title: "Performance",
+      desc: "Optimizing websites for speed and scalability."
+    }
   ]
 
   return (
@@ -24,7 +31,7 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto">
 
-        {/* heading */}
+        {/* Heading */}
         <div className="text-center mb-24">
 
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -39,26 +46,29 @@ export default function About() {
         </div>
 
 
-        <div className="grid md:grid-cols-2 gap-20 items-center">
+        {/* Main About */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
           {/* IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
 
             <div className="relative group">
 
-              {/* glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-600 blur-3xl opacity-20 rounded-3xl"></div>
+              {/* Glow */}
+              <div className="absolute inset-0 bg-orange-500/20 blur-3xl rounded-3xl"></div>
 
-              {/* image */}
-              <img
+              <Image
                 src="/images/hero.png"
-                alt="Afjal"
-                className="relative w-80 rounded-3xl border border-white/10 shadow-2xl transition duration-500 group-hover:scale-105"
+                alt="Md Afjal Ali"
+                width={340}
+                height={340}
+                className="relative rounded-3xl border border-zinc-800 shadow-xl transition duration-500 group-hover:scale-105"
               />
 
             </div>
@@ -70,6 +80,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
 
@@ -93,45 +104,62 @@ export default function About() {
             </p>
 
 
-            {/* TECH STACK */}
-            <div className="flex flex-wrap gap-3 mb-10">
-
-              {tech.map((t) => (
-                <span
-                  key={t}
-                  className="px-3 py-1 text-sm bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 transition"
-                >
-                  {t}
-                </span>
-              ))}
-
-            </div>
-
-
             {/* STATS */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-6 mb-12">
 
-              {stats.map((s) => (
-                <motion.div
-                  key={s.label}
-                  whileHover={{ y: -6 }}
-                  className="bg-white/5 border border-white/10 backdrop-blur-lg px-6 py-6 rounded-xl text-center"
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-zinc-900 border border-zinc-800 px-6 py-6 rounded-xl text-center hover:border-orange-500/40 hover:scale-105 transition"
                 >
 
-                  <h3 className="text-3xl font-bold text-white">
-                    {s.number}
+                  <h3 className="text-3xl font-bold">
+                    {stat.value}
                   </h3>
 
                   <p className="text-gray-400 text-sm mt-1">
-                    {s.label}
+                    {stat.label}
                   </p>
 
-                </motion.div>
+                </div>
               ))}
 
             </div>
 
+            {/* CTA */}
+            <a
+              href="#projects"
+              className="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg text-white font-medium transition hover:scale-105"
+            >
+              View My Projects
+            </a>
+
           </motion.div>
+
+        </div>
+
+
+        {/* WHAT I DO */}
+        <div className="grid md:grid-cols-3 gap-8 mt-24">
+
+          {services.map((service) => (
+
+            <div
+              key={service.title}
+              className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl hover:border-orange-500/40 hover:-translate-y-1 transition"
+            >
+
+              <h4 className="text-lg font-semibold mb-3">
+                {service.title}
+              </h4>
+
+              <p className="text-gray-400 text-sm">
+                {service.desc}
+              </p>
+
+            </div>
+
+          ))}
 
         </div>
 
