@@ -37,31 +37,41 @@ export default function Hero() {
 <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
 
 {/* LEFT SIDE */}
-<motion.div variants={container} initial="hidden" animate="show">
+<motion.div
+  variants={container}
+  initial="hidden"
+  animate="show"
+  className="max-w-[520px]"
+>
 
 <motion.p variants={item} className="text-orange-400 text-lg mb-4">
 Hey, I am Md Afjal Ali
 </motion.p>
 
-<motion.h1 variants={item} className="text-5xl md:text-6xl font-bold text-white leading-tight">
+<motion.h1
+  variants={item}
+  className="text-5xl md:text-6xl font-bold text-white leading-tight min-h-[90px]"
+>
 
+<span className="inline-block w-[500px] whitespace-nowrap">
 <TypeAnimation
-sequence={[
-"Frontend Developer",
-2000,
-"React Developer",
-2000,
-"Full Stack Developer",
-2000
-]}
-wrapper="span"
-speed={50}
-repeat={Infinity}
+  sequence={[
+    "Frontend Developer",
+    2000,
+    "React Developer",
+    2000,
+    "Full Stack Developer",
+    2000
+  ]}
+  speed={50}
+  repeat={Infinity}
+  cursor={false}
 />
+</span>
 
 </motion.h1>
 
-<motion.p variants={item} className="mt-6 text-gray-400 max-w-lg">
+<motion.p variants={item} className="mt-6 text-gray-400">
 I build modern web applications using Next.js,
 TypeScript, Node.js and PostgreSQL.
 </motion.p>
@@ -106,28 +116,28 @@ Download Resume
 
 {/* RIGHT SIDE */}
 <motion.div
-initial={{ opacity: 0, scale: 0.9 }}
-animate={{ opacity: 1, scale: 1 }}
-transition={{ duration: 0.6 }}
-className="flex justify-center"
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6 }}
+  className="flex justify-end min-h-[420px]"
 >
 
 <motion.div
-animate={{ y: [0, -12, 0] }}
-transition={{ duration: 4, repeat: Infinity }}
-className="relative"
+  animate={{ y: [0, -12, 0] }}
+  transition={{ duration: 4, repeat: Infinity }}
+  className="relative translate-x-12"   // ✅ final clean shift
 >
 
-{/* Glow behind image */}
+{/* Glow */}
 <div className="absolute inset-0 rounded-full bg-orange-500/30 blur-3xl"></div>
 
 <Image
-src="/images/hero.png"
-alt="Md Afjal Ali"
-width={380}
-height={380}
-priority
-className="relative rounded-full object-cover border-4 border-white/10 shadow-[0_0_60px_rgba(255,115,0,0.35)]"
+  src="/images/hero.png"
+  alt="Md Afjal Ali"
+  width={380}
+  height={380}
+  priority
+  className="relative rounded-full object-cover border-4 border-white/10 shadow-[0_0_60px_rgba(255,115,0,0.35)]"
 />
 
 </motion.div>
@@ -138,9 +148,9 @@ className="relative rounded-full object-cover border-4 border-white/10 shadow-[0
 
 {/* Scroll */}
 <motion.div
-animate={{ y: [0, 12, 0] }}
-transition={{ duration: 1.5, repeat: Infinity }}
-className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-400 text-sm"
+  animate={{ y: [0, 12, 0] }}
+  transition={{ duration: 1.5, repeat: Infinity }}
+  className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-400 text-sm"
 >
 ↓ Scroll
 </motion.div>
