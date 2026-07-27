@@ -1,79 +1,129 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-const skills = [
-  { name: "HTML", level: 95 },
-  { name: "CSS", level: 90 },
-  { name: "JavaScript", level: 92 },
-  { name: "PHP", level: 75 },
-
-  { name: "React", level: 90 },
-  { name: "Next.js", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "Node.js", level: 80 },
-
-  { name: "PostgreSQL", level: 75 },
-  { name: "Tailwind CSS", level: 90 },
-]
+const techCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "PHP",
+    ],
+  },
+  {
+    title: "Database",
+    skills: [
+      "PostgreSQL",
+      "Prisma",
+    ],
+  },
+  {
+    title: "Tools",
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Figma",
+    ],
+  },
+];
 
 export default function TechStack() {
-
   return (
+    <section
+      id="skills"
+      className="relative overflow-hidden bg-black py-32"
+    >
+      {/* Background Glow */}
+      <div className="absolute left-1/2 top-32 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[140px]" />
 
-    <section id="skills" className="py-32 bg-black">
+      <div className="relative mx-auto max-w-7xl px-6">
 
-      <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-20 text-center"
+        >
+          <span className="mb-4 inline-block rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm font-medium text-orange-400">
+            Technologies I Work With
+          </span>
 
-        <h2 className="text-5xl font-bold text-white mb-20">
-          Tech Stack
-        </h2>
+          <h2 className="mt-6 text-5xl font-bold text-white md:text-6xl">
+            Tech{" "}
+            <span className="text-orange-500">
+              Stack
+            </span>
+          </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
+            My preferred technologies for building fast, scalable and
+            production-ready web applications with a strong focus on clean
+            architecture and performance.
+          </p>
+        </motion.div>
 
-          {skills.map((skill, i) => (
+        {/* Cards */}
+        <div className="grid gap-8 md:grid-cols-2">
 
+                    {techCategories.map((category, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
+              key={category.title}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-neutral-900 border border-white/10 rounded-2xl p-4"
+              transition={{
+                duration: 0.6,
+                delay: index * 0.12,
+              }}
+              className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:bg-white/[0.07] hover:shadow-[0_20px_60px_rgba(249,115,22,0.18)]"
             >
+              {/* Card Header */}
+              <div className="mb-8 flex items-center justify-between">
+                <h3 className="text-2xl font-semibold text-white">
+                  {category.title}
+                </h3>
 
-              <div className="flex justify-between mb-3">
-
-                <span className="text-white font-medium">
-                  {skill.name}
-                </span>
-
-                <span className="text-gray-400 text-sm">
-                  {skill.level}%
-                </span>
-
+                <div className="h-3 w-3 rounded-full bg-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.9)] transition-transform duration-500 group-hover:scale-125" />
               </div>
 
-              <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
-
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1 }}
-                  className="h-full bg-orange-500 rounded-full"
-                />
-
+              {/* Skill Badges */}
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.35,
+                      delay: skillIndex * 0.05,
+                    }}
+                    className="cursor-default rounded-full border border-white/10 bg-black/40 px-4 py-2 text-sm font-medium text-gray-300 transition-all duration-300 hover:border-orange-500/40 hover:bg-orange-500 hover:text-white"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
-
-  )
+  );
 }

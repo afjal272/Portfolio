@@ -1,61 +1,70 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { motion } from "framer-motion"
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "#" },
+  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50">
-
-      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-black/60 backdrop-blur-2xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         {/* Logo */}
         <Link
           href="/"
-          className="text-white text-lg font-semibold tracking-wide"
+          className="text-2xl font-bold tracking-wide text-white transition-colors duration-300 hover:text-orange-400"
         >
-          Portfolio
+          <span className="text-orange-500">&lt;</span>
+          Afjal
+          <span className="text-orange-500">/&gt;</span>
         </Link>
 
-        {/* Center Navigation */}
-        <div className="hidden md:flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-3 py-2">
-
-          {navLinks.map((link, i) => (
-            <Link
-              key={i}
-              href={link.href}
-              className="relative px-5 py-2 text-sm text-gray-300 hover:text-white transition"
+        {/* Desktop Menu */}
+        <nav className="hidden items-center gap-8 md:flex">
+          {navLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-gray-300 no-underline transition-colors duration-300 hover:text-orange-400 focus:outline-none"
             >
-              {link.name}
-
-              {/* hover glow */}
-              <motion.span
-                layoutId="nav-pill"
-                className="absolute inset-0 rounded-full bg-white/10 opacity-0 hover:opacity-100"
-              />
-            </Link>
+              {item.name}
+            </a>
           ))}
-
-        </div>
+        </nav>
 
         {/* Resume Button */}
-        <Link
-          href="#"
-          className="hidden md:flex items-center px-5 py-2 rounded-full border border-white/15 text-white text-sm hover:bg-white/10 transition"
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:bg-orange-600 md:flex"
         >
           Resume
-        </Link>
-
+        </a>
       </div>
-
     </header>
-  )
+  );
 }
