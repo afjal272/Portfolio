@@ -21,7 +21,7 @@ const projects = [
       "Explainable Recommendations",
     ],
     github:  "https://github.com/afjal272/shopio",
-    demo:  "https://shopio.vercel.app",
+    demo:  "https://shopio-nine.vercel.app/",
   },
   {
     title: "Leora",
