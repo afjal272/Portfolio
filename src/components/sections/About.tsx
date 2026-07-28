@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+
 export default function About() {
   const stats = [
     { value: "10+", label: "Projects Built" },
@@ -23,14 +24,15 @@ export default function About() {
   ];
 
   return (
+    
     <section
       id="about"
-      className="relative overflow-hidden py-32 px-6"
+      className="relative overflow-hidden px-6 py-32"
     >
       {/* Background Glow */}
-      <div className="absolute left-[-120px] top-20 h-80 w-80 rounded-full bg-orange-500/10 blur-[120px]" />
+      <div className="absolute left-[-120px] top-20 h-80 w-80 rounded-full bg-teal-400/10 blur-[120px]" />
 
-      <div className="absolute right-[-120px] bottom-20 h-80 w-80 rounded-full bg-purple-600/10 blur-[120px]" />
+      <div className="absolute right-[-120px] bottom-20 h-80 w-80 rounded-full bg-cyan-500/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
 
@@ -44,7 +46,7 @@ export default function About() {
           className="mb-24 text-center"
         >
 
-          <span className="inline-flex rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-400">
+          <span className="inline-flex rounded-full border border-teal-400/20 bg-teal-400/10 px-4 py-2 text-sm font-medium text-teal-400">
             About Me
           </span>
 
@@ -79,11 +81,11 @@ export default function About() {
 
               {/* Glow */}
 
-              <div className="absolute -inset-3 rounded-[40px] bg-gradient-to-r from-orange-500/40 to-purple-600/40 opacity-40 blur-3xl transition duration-700 group-hover:opacity-70" />
+              <div className="absolute -inset-3 rounded-[40px] bg-gradient-to-r from-teal-400/30 to-cyan-500/30 opacity-40 blur-3xl transition duration-700 group-hover:opacity-70" />
 
               {/* Border */}
 
-              <div className="relative rounded-[36px] border border-white/10 bg-white/5 p-3 backdrop-blur-xl">
+              <div className="relative rounded-[36px] border border-white/10 bg-white/[0.03] p-3 backdrop-blur-xl">
 
                 <Image
                   src="/images/hero.png"
@@ -107,10 +109,10 @@ export default function About() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -right-6 top-8 rounded-2xl border border-orange-500/20 bg-zinc-900/90 px-5 py-4 backdrop-blur-xl"
+                className="absolute -right-6 top-8 rounded-2xl border border-teal-400/20 bg-white/[0.03] px-5 py-4 backdrop-blur-xl"
               >
 
-                <p className="text-3xl font-bold text-orange-400">
+                <p className="text-3xl font-bold text-teal-400">
                   10+
                 </p>
 
@@ -131,14 +133,14 @@ export default function About() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -left-6 bottom-10 rounded-2xl border border-white/10 bg-zinc-900/90 px-5 py-4 backdrop-blur-xl"
+                className="absolute -left-6 bottom-10 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 backdrop-blur-xl"
               >
 
                 <p className="text-xl font-semibold text-white">
                   React
                 </p>
 
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-teal-400">
                   Developer
                 </p>
 
@@ -148,20 +150,22 @@ export default function About() {
 
           </motion.div>
 
-                  <motion.div
+                    {/* Right */}
+
+          <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
             className="flex flex-col"
           >
-            <span className="text-orange-400 font-medium tracking-widest uppercase text-sm">
+            <span className="text-sm font-medium uppercase tracking-widest text-teal-400">
               Frontend Developer
             </span>
 
             <h3 className="mt-4 text-4xl font-bold leading-tight text-white">
               Hi, I'm{" "}
-              <span className="text-orange-400">Md Afjal Ali</span>
+              <span className="text-teal-400">Md Afjal Ali</span>
             </h3>
 
             <p className="mt-8 text-lg leading-8 text-gray-300">
@@ -175,11 +179,11 @@ export default function About() {
               architecture.
             </p>
 
-            <p className="mt-6 text-gray-400 leading-8">
+            <p className="mt-6 leading-8 text-gray-400">
               Currently I'm expanding my full-stack expertise by developing
               real-world SaaS products, AI-powered applications and modern web
-              platforms while continuously improving performance, accessibility
-              and user experience.
+              platforms while continuously improving performance,
+              accessibility and user experience.
             </p>
 
             {/* Tech Stack */}
@@ -192,7 +196,8 @@ export default function About() {
                     y: -4,
                     scale: 1.05,
                   }}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 transition hover:border-orange-500 hover:text-white"
+                  transition={{ duration: 0.25 }}
+                  className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-gray-300 backdrop-blur-xl transition-all duration-300 hover:border-teal-400/40 hover:bg-teal-400/10 hover:text-teal-300"
                 >
                   {tech}
                 </motion.span>
@@ -210,9 +215,9 @@ export default function About() {
                     scale: 1.03,
                   }}
                   transition={{ duration: 0.25 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-300 hover:border-teal-400/40 hover:bg-white/[0.05] hover:shadow-[0_15px_40px_rgba(45,212,191,0.15)]"
                 >
-                  <h4 className="text-3xl font-bold text-orange-400">
+                  <h4 className="text-3xl font-bold text-teal-400">
                     {stat.value}
                   </h4>
 
@@ -235,7 +240,7 @@ export default function About() {
                 whileTap={{
                   scale: 0.96,
                 }}
-                className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-600"
+                className="rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 px-8 py-4 font-semibold text-black shadow-lg shadow-teal-400/30 transition-all duration-300 hover:scale-[1.02]"
               >
                 View Projects
               </motion.a>
@@ -249,7 +254,7 @@ export default function About() {
                 whileTap={{
                   scale: 0.96,
                 }}
-                className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-xl transition hover:border-orange-500"
+                className="rounded-xl border border-white/10 bg-white/[0.03] px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-teal-400/40 hover:bg-white/[0.05]"
               >
                 Download Resume
               </motion.a>

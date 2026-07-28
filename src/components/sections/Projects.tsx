@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Tilt from "react-parallax-tilt";
+
 
 const projects = [
   {
@@ -75,9 +75,9 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-black py-32"
+      className="relative overflow-hidden py-32"
     >
-      <div className="absolute left-1/2 top-40 h-96 w-96 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[180px]" />
+      <div className="absolute left-1/2 top-40 h-96 w-96 -translate-x-1/2 rounded-full bg-teal-400/10 blur-[180px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
 
@@ -88,12 +88,12 @@ export default function Projects() {
           transition={{ duration: .7 }}
           className="mb-16 text-center"
         >
-          <span className="rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
+          <span className="rounded-full border border-teal-400/20 bg-teal-400/10 px-5 py-2 text-sm text-teal-400">
             Featured Work
           </span>
 
           <h2 className="mt-6 text-5xl font-bold text-white md:text-6xl">
-            Selected <span className="text-orange-500">Projects</span>
+            Selected <span className="text-teal-400">Projects</span>
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
@@ -117,10 +117,10 @@ export default function Projects() {
                  ease: [0.22, 1, 0.36, 1],
                  }}
                 
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-[#111111] transition-all duration-300 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-xl"
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/40 hover:shadow-xl"
               >
 
-                <div className="relative h-45 overflow-hidden bg-neutral-900">
+                <div className="relative h-45 overflow-hidden bg-white/[0.02]">
 
                   <Image
                     src={project.image}
@@ -133,7 +133,7 @@ export default function Projects() {
 
                 <div className="p-8">
 
-                  <span className="w-fit rounded-full bg-orange-500/10 px-4 py-2 text-xs font-medium text-orange-400">
+                  <span className="w-fit rounded-full bg-teal-400/10 px-4 py-2 text-xs font-medium text-teal-400">
                     {project.category}
                   </span>
 
@@ -152,7 +152,7 @@ export default function Projects() {
                                         {project.features.map((feature) => (
                       <span
                         key={feature}
-                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-center text-xs text-gray-300 transition-all duration-300 hover:border-orange-500/40 hover:bg-orange-500/10 hover:text-orange-300"
+                       className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-center text-xs text-gray-300 transition-all duration-300 hover:border-teal-400/40 hover:bg-teal-400/10 hover:text-teal-300"
                       >
                         {feature}
                       </span>
@@ -163,7 +163,7 @@ export default function Projects() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-lg bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-300"
+                        className="rounded-lg bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300"
                       >
                         {tech}
                       </span>
@@ -174,7 +174,7 @@ export default function Projects() {
 
                     <a
                       href={project.demo}
-                      className="flex-1 rounded-xl bg-orange-500 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:bg-orange-600"
+                      className="flex-1 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 py-3 text-center text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
                     >
                       Live Demo
                     </a>

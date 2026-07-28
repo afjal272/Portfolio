@@ -26,13 +26,11 @@ export default function Hero() {
 
   return (
 
-<section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+<section className="relative min-h-screen flex items-center overflow-hidden">
 
-{/* Background */}
-<div className="absolute inset-0 bg-gradient-to-r from-black via-[#1a0f05] to-[#2a1406]" />
 
 {/* Glow */}
-<div className="absolute right-[-200px] top-[-120px] w-[650px] h-[650px] bg-orange-500/20 blur-[200px] rounded-full" />
+<div className="absolute right-[-200px] top-[-120px] w-[650px] h-[650px] bg-teal-400/20 blur-[200px] rounded-full" />
 
 <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
 
@@ -44,7 +42,7 @@ export default function Hero() {
   className="max-w-[520px]"
 >
 
-<motion.p variants={item} className="text-orange-400 text-lg mb-4">
+<motion.p variants={item} className="text-teal-400 text-lg mb-4">
 Hey, I am Md Afjal Ali
 </motion.p>
 
@@ -96,7 +94,7 @@ className="px-3 py-1 text-sm bg-white/5 border border-white/10 rounded-lg text-g
 <motion.button
 whileHover={{ scale: 1.06 }}
 whileTap={{ scale: 0.95 }}
-className="px-7 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-medium shadow-lg shadow-orange-500/40"
+className="px-7 py-3 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 text-black font-medium shadow-lg shadow-teal-400/30 hover:scale-105 transition-all duration-300"
 >
 Hire Me
 </motion.button>
@@ -129,7 +127,7 @@ Download Resume
 >
 
 {/* Glow */}
-<div className="absolute inset-0 rounded-full bg-orange-500/30 blur-3xl"></div>
+<div className="absolute inset-0 rounded-full bg-teal-400/25 blur-3xl"></div>
 
 <Image
   src="/images/hero.png"
@@ -137,7 +135,7 @@ Download Resume
   width={380}
   height={380}
   priority
-  className="relative rounded-full object-cover border-4 border-white/10 shadow-[0_0_60px_rgba(255,115,0,0.35)]"
+  className="relative rounded-full object-cover border-4 border-white/10 shadow-[0_0_60px_rgba(45,212,191,0.30)]"
 />
 
 </motion.div>
