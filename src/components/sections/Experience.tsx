@@ -8,7 +8,7 @@ const experience = [
   {
     company: "TechChefz Digital Pvt. Ltd.",
     role: "Frontend Developer Intern",
-    period: "Jan 2025 – Present",
+    period: "Jan 2025 - Dec 2026",
     points: [
       "Developed responsive UI components using React and Tailwind CSS.",
       "Converted Figma designs into clean, reusable frontend code.",
@@ -19,7 +19,7 @@ const experience = [
   {
     company: "UniConverge Technologies Pvt. Ltd.",
     role: "Web Development Intern",
-    period: "Sep 2024 – Oct 2024",
+    period: "Sep 2024 - Oct 2024",
     points: [
       "Built responsive websites using HTML, CSS and JavaScript.",
       "Created layouts with Flexbox and Bootstrap.",
