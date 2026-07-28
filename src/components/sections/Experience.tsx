@@ -8,11 +8,11 @@ const experience = [
   {
     company: "TechChefz Digital Pvt. Ltd.",
     role: "Frontend Developer Intern",
-    period: "Jan 2025 - Dec 2026",
+    period: "Dec 2025 - Dec 2026",
     points: [
-      "Developed responsive UI components using React and Tailwind CSS.",
-      "Converted Figma designs into clean, reusable frontend code.",
-      "Integrated REST APIs for dynamic data rendering.",
+      "Built 15+ reusable UI components using React and Tailwind CSS.",
+      "Converted 10+ Figma screens into responsive frontend pages.",
+      "Fixed UI issues and improved responsiveness across 20+ pages.",
       "Optimized UI for responsiveness and cross-browser compatibility.",
     ],
   },
@@ -37,7 +37,7 @@ export default function Experience() {
       {/* Glow */}
       <div className="absolute left-1/2 top-32 h-80 w-80 -translate-x-1/2 rounded-full bg-teal-400/10 blur-[180px]" />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-5xl px-6">
 
         {/* Heading */}
         <motion.div

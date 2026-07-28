@@ -17,11 +17,12 @@ export default function Hero() {
   }
 
   const techStack = [
-    "Next.js",
     "React",
+    "Next.js",
+    "JavaScript",
     "TypeScript",
-    "Node.js",
-    "PostgreSQL"
+    "Tailwind CSS",
+    
   ]
 
   return (
@@ -55,13 +56,12 @@ Hey, I am Md Afjal Ali
 <TypeAnimation
   sequence={[
     "Frontend Developer",
-    2000,
+    1000,
     "React Developer",
-    2000,
-    "Full Stack Developer",
-    2000
+    1000,
+    
   ]}
-  speed={50}
+  speed={60}
   repeat={Infinity}
   cursor={false}
 />
@@ -70,8 +70,8 @@ Hey, I am Md Afjal Ali
 </motion.h1>
 
 <motion.p variants={item} className="mt-6 text-gray-400">
-I build modern web applications using Next.js,
-TypeScript, Node.js and PostgreSQL.
+I build modern, responsive web applications using React, Next.js and TypeScript, 
+with a focus on clean UI, performance and user experience.
 </motion.p>
 
 {/* Tech */}

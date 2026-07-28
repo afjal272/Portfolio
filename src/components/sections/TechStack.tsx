@@ -17,10 +17,11 @@ const techCategories = [
   },
   {
     title: "Backend",
+    level: "Basic",
     skills: [
       "Node.js",
       "Express.js",
-      "PHP",
+      "REST APIs",
     ],
   },
   {
@@ -94,13 +95,21 @@ export default function TechStack() {
               className="group rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-teal-400/40 hover:bg-white/[0.05] hover:shadow-[0_20px_60px_rgba(45,212,191,0.15)]"
             >
               {/* Card Header */}
-              <div className="mb-8 flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-white">
-                  {category.title}
-                </h3>
+            <div className="mb-8 flex items-center justify-between">
+               <div className="flex items-center gap-3">
+               <h3 className="text-2xl font-semibold text-white">
+                {category.title}
+              </h3>
 
-                <div className="h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_20px_rgba(45,212,191,0.8)] transition-transform duration-500 group-hover:scale-125" />
-              </div>
+               {category.level && (
+             <span className="rounded-full border border-teal-400/20 bg-teal-400/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-teal-300">
+                {category.level}
+             </span>
+          )}
+            </div>
+
+             <div className="h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_20px_rgba(45,212,191,0.8)] transition-transform duration-500 group-hover:scale-125" />
+          </div>
 
               {/* Skill Badges */}
               <div className="flex flex-wrap gap-3">

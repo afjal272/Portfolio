@@ -113,7 +113,7 @@ export default function About() {
               >
 
                 <p className="text-3xl font-bold text-teal-400">
-                  10+
+                  6+
                 </p>
 
                 <p className="text-sm text-gray-400">
@@ -137,7 +137,7 @@ export default function About() {
               >
 
                 <p className="text-xl font-semibold text-white">
-                  React
+                  Frontend
                 </p>
 
                 <p className="text-sm text-teal-400">
