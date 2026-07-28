@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+
 
 
 const projects = [
@@ -10,7 +12,7 @@ const projects = [
     category: "AI Product Recommendation Platform",
     description:
       "An AI-powered product discovery platform that helps users find the best products based on their budget, preferences and intelligent decision scoring.",
-    image: "/projects/shopio.png",
+    image: "/images/Shopio.jpeg",
     tech: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     features: [
       "AI Decision Engine",
@@ -18,15 +20,15 @@ const projects = [
       "Live Product Comparison",
       "Explainable Recommendations",
     ],
-    github: "#",
-    demo: "#",
+    github:  "https://github.com/afjal272/shopio",
+    demo:  "https://shopio.vercel.app",
   },
   {
     title: "Leora",
-    category: "Modern SaaS Platform",
+    category: "Modern E-commerce Platform",
     description:
       "A scalable SaaS application built with modern architecture, responsive UI and production-ready development practices.",
-    image: "/projects/leora.png",
+    image: "/images/leora.jpeg",
     tech: ["React", "TypeScript", "Tailwind", "Node.js"],
     features: [
       "Modern Dashboard",
@@ -34,15 +36,15 @@ const projects = [
       "Responsive Design",
       "Scalable Architecture",
     ],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/afjal272/leora-ecommerce",
+    demo: "https://leora-ecommerce.vercel.app/",
   },
   {
     title: "GoCarry",
     category: "Corporate Gifting Platform",
     description:
       "Corporate gifting platform built for businesses to discover premium gifting products for employees and clients.",
-    image: "/projects/gocarry.png",
+    image: "/images/gocarry.jpeg",
     tech: ["Next.js", "Tailwind", "TypeScript", "SEO"],
     features: [
       "Corporate Product Showcase",
@@ -50,15 +52,15 @@ const projects = [
       "Responsive UI",
       "Lead Generation",
     ],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/afjal272/Gocarry",
+    demo: "https://gocarry.vercel.app",
   },
   {
     title: "Doctor Appointment System",
     category: "Healthcare Management",
     description:
       "Appointment booking platform for patients and doctors with authentication, scheduling and dashboard management.",
-    image: "/projects/doctor.png",
+    image: "/images/doctor.jpeg",
     tech: ["React", "Node.js", "Express", "PostgreSQL"],
     features: [
       "Appointment Booking",
@@ -66,8 +68,8 @@ const projects = [
       "Authentication",
       "Dashboard",
     ],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/afjal272/Online-Health-Services-web-app",
+    demo: "https://online-health-services-web-app.vercel.app/"
   },
 ];
 
@@ -120,13 +122,13 @@ export default function Projects() {
                 className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/40 hover:shadow-xl"
               >
 
-                <div className="relative h-45 overflow-hidden bg-white/[0.02]">
+                <div className="relative h-56 overflow-hidden rounded-t-3xl bg-[#0f172a]">
 
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
 
                 </div>
@@ -173,18 +175,25 @@ export default function Projects() {
                   <div className="mt-8 flex gap-3">
 
                     <a
-                      href={project.demo}
-                      className="flex-1 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 py-3 text-center text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
-                    >
-                      Live Demo
-                    </a>
+  href={project.demo}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 py-3 text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
+>
+  <ExternalLink size={18} />
+  Live Demo
+</a>
+
 
                     <a
-                      href={project.github}
-                      className="flex-1 rounded-xl border border-white/10 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10"
-                    >
-                      GitHub
-                    </a>
+  href={project.github}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10"
+>
+  <Github size={18} />
+  GitHub
+</a>
 
                   </div>
 
